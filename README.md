@@ -1,7 +1,7 @@
 # IntellCollab – ML-Powered Project Recommender System
 
 ***************************************
-IntellCollab is a machine learning-based recommender system designed to assist students and professionals in discovering project ideas that align with their interests and skills. Developed as a Final Year Project, it aims to streamline the process of project selection by providing personalized, data-driven recommendations.
+IntellCollab is a machine learning-based recommender system designed to assist academia and industry professionals in discovering project ideas that align with their interests and skills. Developed as a Final Year Project, it aims to streamline the process of project selection by providing personalized, data-driven recommendations.
 
 **********************************
 
