@@ -11,24 +11,26 @@ The project leverages a full-stack architecture combining modern web development
 ***********************************
 
 💻 Backend
-Flask – Lightweight web framework for Python-based APIs and routing
+***********************************
+- Flask – Lightweight web framework for Python-based APIs and routing
 
-MongoDB – NoSQL database for storing user profiles and project data
+- MongoDB – NoSQL database for storing user profiles and project data
 
-Scikit-learn (sklearn) – For building and evaluating recommendation models
+- Scikit-learn (sklearn) – For building and evaluating recommendation models
 
-NumPy – Numerical computations and data manipulation
+- NumPy – Numerical computations and data manipulation
 
-Pytest – Unit testing for Python code
+- Pytest – Unit testing for Python code
 
 ******************************************
 
 🎨 Frontend
-React – Dynamic UI rendering and component-based architecture
+******************************************
+- React – Dynamic UI rendering and component-based architecture
 
-Bootstrap – Responsive design and prebuilt UI components
+- Bootstrap – Responsive design and prebuilt UI components
 
-HTML/CSS – Core web structure and styling
+- HTML/CSS – Core web structure and styling
 
 **********************************
 
