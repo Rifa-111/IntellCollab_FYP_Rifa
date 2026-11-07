@@ -1,0 +1,26 @@
+[
+  {
+    "id": "demo-001",
+    "title": "Clinical Text Classification",
+    "description": "A synthetic research brief exploring natural language processing for clinical document classification.",
+    "skills": ["Python", "machine learning", "NLP"]
+  },
+  {
+    "id": "demo-002",
+    "title": "Sustainable Energy Analytics",
+    "description": "A synthetic academia-industry forecasting project using smart meter readings.",
+    "skills": ["Python", "time series", "data visualisation"]
+  },
+  {
+    "id": "demo-003",
+    "title": "Materials Science Knowledge Graph",
+    "description": "A synthetic project linking research papers and materials properties using a knowledge graph.",
+    "skills": ["knowledge graphs", "information retrieval"]
+  },
+  {
+    "id": "demo-004",
+    "title": "Healthcare Model Evaluation",
+    "description": "A synthetic cross-sector study comparing machine learning models and transparent evaluation metrics.",
+    "skills": ["Python", "machine learning", "model evaluation"]
+  }
+]
