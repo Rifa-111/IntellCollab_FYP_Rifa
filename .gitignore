@@ -1,0 +1,23 @@
+# Local credentials and environments
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+node_modules/
+.DS_Store
+# Private datasets, local exports and model artefacts
+data/private/
+datasets/private/
+outputs/
+models/private/
+*.sqlite3
