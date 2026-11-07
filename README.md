@@ -94,9 +94,6 @@ The full-stack coursework appears across separate repositories:
 
 The repository's 2026 commits must not be passed off as work undertaken in the original final-year project. Research evaluation results should only be quoted if independently traceable to the original dissertation, dataset and scripts. No benchmark figures, uptake statistics or external awards have been inferred.
 
-## Evidence context: UK Global Talent
-
-This public repository can substantiate the technical concept, recent open-source engineering work and, once verified, reproducibility practices. It **cannot alone** prove external recognition, innovation impact, independently validated matching quality or broad adoption. Preserve dated university assessment records, original implementation snapshots, research correspondence and independent technical reviews separately. See [provenance and evidence boundaries](docs/PROVENANCE_AND_EVIDENCE.md).
 
 ## Responsible reuse and future work
 
