@@ -1,49 +1,105 @@
-# IntellCollab – ML-Powered Project Recommender System
+# IntellCollab
+### Explainable project matching for academia–industry collaboration
 
-***************************************
-IntellCollab is a machine learning-based recommender system that uses natural language processing (NLP) to assist academia and industry professionals in discovering project ideas that align with their interests and skills. It aims to streamline the process of project selection by providing personalised, data-driven recommendations.
+**Research origin:** undergraduate final-year project exploring machine-learning and NLP-based recommendations for matching academic and industry interests. This repository now also includes a **new 2026, dependency-free, offline demonstrator** of a related recommendation concept. The demonstrator is **not a historical reproduction** of the original final-year system or its evaluated ML model.
 
-**********************************
+[Run the demonstrator](#run-in-under-a-minute) · [Reproducibility](#reproducibility-and-testing) · [Provenance](docs/PROVENANCE_AND_EVIDENCE.md) · [Security](SECURITY.md)
 
-🛠️ Built With
-The project leverages a full-stack architecture combining modern web development and data science tools:
+## Why this project matters
 
-***********************************
+Academic researchers and industry teams can struggle to identify projects that match skills, interests and research topics. The original IntellCollab project investigated NLP-driven recommendation techniques to support project discovery. The aim of this public repository is to make its **research motivation** understandable and provide a minimal, independently runnable illustration of text-based matching, while preserving a clear distinction between historical results and subsequent engineering improvements.
 
-💻 Backend
-***********************************
-- Flask – Lightweight web framework for Python-based APIs and routing
+## What is actually available here
 
-- MongoDB – NoSQL database for storing user profiles and project data
+| Component | Status | Verification |
+| --- | --- | --- |
+| Research context and project description | Documented | Historical project context; not itself a tested outcome |
+| Python text-similarity and skill-overlap demonstrator | Implemented **in this repository in 2026** | Deterministic source, synthetic records and offline tests |
+| Synthetic project examples | Included | Explicitly fictional, without user or company records |
+| CI and automated regression tests | Configured | GitHub Actions status must be checked for each commit |
+| Original Flask and MongoDB backend | **Not included** | Historical source in another repository; unsafe to reuse without remediation |
+| Original React interface | **Not included** | Historical front-end source in a separate repository |
+| Original datasets, trained model and performance figures | **Not included** | Cannot be reproduced or inferred from this demonstrator |
+| Production deployment or independent adoption | **Not demonstrated** | No external usage claims are made |
 
-- Scikit-learn (sklearn) – For building and evaluating recommendation models
+## How the new demonstrator works
 
-- NumPy – Numerical computations and data manipulation
+```text
+User-supplied skills + interests                 Synthetic project catalogue
+                 |                                          |
+                 +----------------+-------------------------+
+                                  |
+                  Normalise text and tokenise
+                                  |
+           Fit TF-IDF on query and project descriptions
+                                  |
+                    Cosine text similarity
+                                  |
+          Exact case-insensitive skill-overlap score
+                                  |
+         Score = 0.80 × similarity + 0.20 × overlap
+                                  |
+          Deterministic ranked results and score components
+```
 
-- Pytest – Unit testing for Python code
+The weights are an **illustrative design choice in the new reference code**, not a recovered parameter from the undergraduate model. Scores are similarity rankings, not measured success rates or probabilities of a successful collaboration.
 
-******************************************
+### Run in under a minute
 
-🎨 Frontend
-******************************************
-- React – Dynamic UI rendering and component-based architecture
+Requires Python **3.10 or later**. The example does not need API credentials, MongoDB, Flask, React, network connectivity or third-party Python packages.
 
-- Bootstrap – Responsive design and prebuilt UI components
+```bash
+git clone https://github.com/Rifa-111/IntellCollab_FYP_Rifa.git
+cd IntellCollab_FYP_Rifa
+python -m intellcollab
+```
 
-- HTML/CSS – Core web structure and styling
+The output is a JSON array containing up to three recommended **fictional** projects and their ranking components. During PR review, use the branch `improve/reproducible-safe-demonstrator-2026`, or wait until the branch has been merged before running these commands against `main`.
 
-**********************************
+### Reproducibility and testing
 
-🚀 Features
-****************************************
-🔍 Intelligent Recommendations: Suggests relevant project ideas based on user preferences and skillsets
+```bash
+python -m unittest discover -s tests -v
+python -m compileall -q intellcollab tests
+```
 
-🧠 ML Integration: Uses vectorization and similarity matching for recommendations
+Tests cover tokenisation, score bounds, empty queries, deterministic ordering, input immutability, duplicate project identifiers and invalid input handling. The [CI workflow](.github/workflows/ci.yml) is configured for Python 3.10, 3.11 and 3.12. It does not test the original FYP or prove deployment readiness.
 
-🌐 Full-Stack Web App: Seamless user experience across backend and frontend
+## Project structure
 
-📊 Scalable Database: MongoDB supports flexible, document-based storage
+```text
+intellcollab/
+  recommender.py             # New 2026 reference scoring implementation
+  __main__.py                # Offline demo command
+examples/
+  synthetic_projects.json    # Fictional project records only
+tests/
+  test_recommender.py        # Offline unit/regression tests
+docs/
+  PROVENANCE_AND_EVIDENCE.md # Historical vs later-work distinctions
+.github/workflows/
+  ci.yml                     # Automated offline checks
+SECURITY.md                  # Data and credentials warning
+CONTRIBUTING.md              # Review and contribution guidelines
+```
 
-✅ Test Coverage: Pytest ensures robust backend functionality
+## Historical source and research integrity
 
+The full-stack coursework appears across separate repositories:
 
+- [Historical React UI](https://github.com/Rifa-111/IntellCollab)
+- [Historical Python/Flask prototype](https://github.com/Rifa-111/IntellCollab-Final)
+
+**Security warning:** the historical backend contains embedded MongoDB credentials and unsafe password handling. Revoke any live exposed credentials and audit the old repository before using, deploying or sharing it as finished software. The reference demonstrator does not incorporate that backend or its data. See [SECURITY.md](SECURITY.md).
+
+The repository's 2026 commits must not be passed off as work undertaken in the original final-year project. Research evaluation results should only be quoted if independently traceable to the original dissertation, dataset and scripts. No benchmark figures, uptake statistics or external awards have been inferred.
+
+## Evidence context: UK Global Talent
+
+This public repository can substantiate the technical concept, recent open-source engineering work and, once verified, reproducibility practices. It **cannot alone** prove external recognition, innovation impact, independently validated matching quality or broad adoption. Preserve dated university assessment records, original implementation snapshots, research correspondence and independent technical reviews separately. See [provenance and evidence boundaries](docs/PROVENANCE_AND_EVIDENCE.md).
+
+## Responsible reuse and future work
+
+Potential next steps include integrating a safe reconstructed web interface, obtaining permission to publish appropriately anonymised evaluation data, evaluating rankings against a documented ground-truth benchmark and inviting independent review. These are **future tasks**, not delivered capabilities.
+
+A top-level open-source licence has **not yet been selected**. The repository owner should choose one before making reuse or redistribution claims. Contributions should follow [CONTRIBUTING.md](CONTRIBUTING.md).
